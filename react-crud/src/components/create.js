@@ -48,7 +48,7 @@ export default function Create() {
             </div>
             <button 
             type="submit" 
-            className="btn btn-success"
+            className="btn btn-primary"
             onClick={postData}
             >Submit</button>
         </form>
