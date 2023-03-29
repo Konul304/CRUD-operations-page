@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 export default function Create() {
@@ -6,14 +6,14 @@ export default function Create() {
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
 
-    const postData = (e) =>{
+    const postData = (e) => {
         e.preventDefault();
-        axios.post('https://64241e5a47401740433376dd.mockapi.io/crudData', 
-        {
-            firstName,
-            lastName,
-            checkbox,
-        })
+        axios.post('https://64241e5a47401740433376dd.mockapi.io/crudData',
+            {
+                firstName,
+                lastName,
+                checkbox,
+            })
     }
 
     return (
@@ -46,10 +46,10 @@ export default function Create() {
                     <label className="fs-5">I agree to the Terms and Conditions</label>
                 </div>
             </div>
-            <button 
-            type="submit" 
-            className="btn btn-primary"
-            onClick={postData}
+            <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={postData}
             >Submit</button>
         </form>
     )
