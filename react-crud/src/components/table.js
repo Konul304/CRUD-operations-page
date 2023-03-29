@@ -13,37 +13,41 @@ export default function Table() {
             })
     }, []);
 
-    const setData = (data) =>{
-        console.log(data)
+    const setData = (data) => {
+        let { id, firstName, lastName, checkbox } = data;
+        localStorage.setItem('ID', id);
+        localStorage.setItem('First Name', firstName);
+        localStorage.setItem('Last Name', lastName);
+        localStorage.setItem('Checkbox Value', checkbox)
     }
 
     return (
         <>
-        <div className='table_container '>
-            <table className="table bg-light">
-                <thead>
-                    <tr>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Checked</th>
-                        <th scope="col">Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {APIData.map((data) => {
-                        return (
-                            <tr>
-                                <td>{data.firstName}</td>
-                                <td>{data.lastName}</td>
-                                <td>{data.checkbox ? 'Checked' : 'Unchecked'}</td>
-                                <td>
-                                    <Link to='/update'><button onClick={() => setData(data)} className='btn btn-primary'>Update</button></Link>
-                                </td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+            <div className='table_container '>
+                <table className="table bg-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Checked</th>
+                            <th scope="col">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {APIData.map((data) => {
+                            return (
+                                <tr>
+                                    <td>{data.firstName}</td>
+                                    <td>{data.lastName}</td>
+                                    <td>{data.checkbox ? 'Checked' : 'Unchecked'}</td>
+                                    <td>
+                                        <Link to='/update'><button onClick={() => setData(data)} className='btn btn-primary'>Update</button></Link>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
             </div>
         </>
     )
