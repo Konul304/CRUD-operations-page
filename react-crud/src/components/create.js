@@ -12,7 +12,7 @@ export default function Create() {
         {
             firstName,
             lastName,
-            checkbox
+            checkbox,
         })
     }
 
