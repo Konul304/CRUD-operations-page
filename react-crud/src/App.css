@@ -13,4 +13,9 @@
   width: 50%;
   font-size: 16px;
   margin: 0 auto;
+  border: none;
+}
+
+tr:last-child{
+  border: none;
 }
