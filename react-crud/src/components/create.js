@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import {useNavigate} from 'react-router'
 import axios from 'axios';
 
 export default function Create() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
+
+    let navigate = useNavigate();
 
     const postData = (e) => {
         e.preventDefault();
@@ -13,6 +16,9 @@ export default function Create() {
                 firstName,
                 lastName,
                 checkbox,
+            })
+            .then(() => {
+                navigate("/")
             })
     }
 

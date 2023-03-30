@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Update() {
+    let navigate = useNavigate();
     const [id, setID] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
+
 
     useEffect(() => {
         setID(localStorage.getItem('ID'))
@@ -14,11 +17,14 @@ export default function Update() {
         setCheckbox(localStorage.getItem('Checkbox Value'))
     }, []);
 
-    const updateAPIData = () => {
+    const updateAPIData = (e) => {
+        e.preventDefault();
         axios.put(`https://64241e5a47401740433376dd.mockapi.io/crudData/${id}`, {
             firstName,
             lastName,
             checkbox,
+        }).then(() => {
+            navigate("/")
         })
     }
 

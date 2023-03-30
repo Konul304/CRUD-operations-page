@@ -12,7 +12,7 @@ function App() {
           <p className="mb-5">React CRUD Operations</p>
           <Routes>
             <Route path='/create' element={<Create />} />
-            <Route path='/read' element={<Read />} />
+            <Route path='/' element={<Read />} />
             <Route path='/update' element={<Update />} />
           </Routes>
         </div>
