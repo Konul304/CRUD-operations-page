@@ -19,3 +19,7 @@
 tr:last-child{
   border: none;
 }
+
+table th{
+  border-color: grey;
+}

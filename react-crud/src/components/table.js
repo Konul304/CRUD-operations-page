@@ -41,7 +41,7 @@ export default function Table() {
             <div className='table_container '>
                 <table className="table bg-light rounded-3">
                     <thead>
-                        <tr>
+                        <tr className='text-muted'>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Checked</th>
@@ -60,7 +60,7 @@ export default function Table() {
                                         <Link to='/update'>
                                             <button
                                                 onClick={() => setData(data)}
-                                                className='btn btn-primary'>
+                                                className='btn btn-secondary'>
                                                 Update
                                             </button>
                                         </Link>
@@ -79,7 +79,7 @@ export default function Table() {
                 </table>
                 <button
                     onClick={() => navigate("/create")}
-                    className='btn btn-light'>Add</button>
+                    className='btn btn-light fw-bold'>Add</button>
             </div>
         </>
     )
