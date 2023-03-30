@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {useNavigate} from 'react-router'
+import { useNavigate } from 'react-router'
 import axios from 'axios';
 
 export default function Create() {
@@ -52,11 +52,22 @@ export default function Create() {
                     <label className="fs-5">I agree to the Terms and Conditions</label>
                 </div>
             </div>
-            <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={postData}
-            >Submit</button>
+            <div className='d-flex justify-content-center'>
+                <button
+                    type="submit"
+                    className="btn btn-secondary me-5"
+                    onClick={() => navigate("/")}
+                >
+                    Cancel
+                </button>
+                <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={postData}
+                >
+                    Submit
+                </button>
+            </div>
         </form>
     )
 }

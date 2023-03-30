@@ -36,11 +36,10 @@ export default function Read() {
             })
     }
 
-
     return (
         <>
             <div className='table_container '>
-                <table className="table bg-light rounded-3">
+                <table className="table bg-light rounded-3 table-hover">
                     <thead>
                         <tr className='text-muted'>
                             <th scope="col">First Name</th>

@@ -63,11 +63,23 @@ export default function Update() {
                             <label className="fs-5">I agree to the Terms and Conditions</label>
                         </div>
                     </div>
-                    <button
-                        type="submit"
-                        className="btn btn-primary"
-                        onClick={updateAPIData}
-                    >Submit</button>
+
+                    <div className='d-flex justify-content-center'>
+                        <button
+                            type="submit"
+                            className="btn btn-secondary me-5"
+                            onClick={() => navigate("/")}
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            onClick={updateAPIData}
+                        >
+                            Submit
+                        </button>
+                    </div>
                 </form>
             </div>
         </>
