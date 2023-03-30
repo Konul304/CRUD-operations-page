@@ -5,7 +5,6 @@ import axios from 'axios';
 export default function Create() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [checkbox, setCheckbox] = useState(false);
 
     let navigate = useNavigate();
 
@@ -15,7 +14,6 @@ export default function Create() {
             {
                 firstName,
                 lastName,
-                checkbox,
             })
             .then(() => {
                 navigate("/")
@@ -43,16 +41,8 @@ export default function Create() {
                 />
             </div>
             <div className="form-group text-start">
-                <div className="form-check mt-3 mb-3">
-                    <input
-                        type="checkbox"
-                        className="form-check-input"
-                        onChange={(e) => setCheckbox(prev => !prev)}
-                    />
-                    <label className="fs-5">I agree to the Terms and Conditions</label>
-                </div>
             </div>
-            <div className='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center mt-4'>
                 <button
                     type="submit"
                     className="btn btn-secondary me-5"

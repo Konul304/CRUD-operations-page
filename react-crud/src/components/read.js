@@ -15,11 +15,10 @@ export default function Read() {
     }, []);
 
     const setData = (data) => {
-        let { id, firstName, lastName, checkbox } = data;
+        let { id, firstName, lastName } = data;
         localStorage.setItem('ID', id);
         localStorage.setItem('First Name', firstName);
         localStorage.setItem('Last Name', lastName);
-        localStorage.setItem('Checkbox Value', checkbox)
     }
 
     const getData = () => {
@@ -44,7 +43,6 @@ export default function Read() {
                         <tr className='text-muted'>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
-                            <th scope="col">Checked</th>
                             <th scope="col">Update</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -55,7 +53,6 @@ export default function Read() {
                                 <tr>
                                     <td>{data.firstName}</td>
                                     <td>{data.lastName}</td>
-                                    <td>{data.checkbox ? 'Checked' : 'Unchecked'}</td>
                                     <td>
                                         <Link to='/update'>
                                             <button
@@ -77,10 +74,12 @@ export default function Read() {
                         })}
                     </tbody>
                 </table>
-                <button
-                    onClick={() => navigate("/create")}
-                    className='btn btn-light fw-bold'>Add</button>
             </div>
+            <button
+                onClick={() => navigate("/create")}
+                className='btn btn-light fw-bold'>
+                Add
+            </button>
         </>
     )
 }

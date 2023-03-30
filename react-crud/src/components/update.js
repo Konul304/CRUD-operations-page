@@ -7,14 +7,12 @@ export default function Update() {
     const [id, setID] = useState(null);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [checkbox, setCheckbox] = useState(false);
 
 
     useEffect(() => {
         setID(localStorage.getItem('ID'))
         setFirstName(localStorage.getItem('First Name'));
         setLastName(localStorage.getItem('Last Name'));
-        setCheckbox(localStorage.getItem('Checkbox Value'))
     }, []);
 
     const updateAPIData = (e) => {
@@ -22,7 +20,6 @@ export default function Update() {
         axios.put(`https://64241e5a47401740433376dd.mockapi.io/crudData/${id}`, {
             firstName,
             lastName,
-            checkbox,
         }).then(() => {
             navigate("/")
         })
@@ -53,15 +50,6 @@ export default function Update() {
                         />
                     </div>
                     <div className="form-group text-start">
-                        <div className="form-check mt-3 mb-3">
-                            <input
-                                type="checkbox"
-                                className="form-check-input"
-                                checked={checkbox}
-                                onChange={(e) => setCheckbox(prev => !prev)}
-                            />
-                            <label className="fs-5">I agree to the Terms and Conditions</label>
-                        </div>
                     </div>
 
                     <div className='d-flex justify-content-center'>
