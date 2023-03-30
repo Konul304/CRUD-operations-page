@@ -1,8 +1,8 @@
 import './App.css';
 import Create from './components/create'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Read from './components/read';
 import Update from './components/update';
+import Read from './components/read';
 
 function App() {
   return (
